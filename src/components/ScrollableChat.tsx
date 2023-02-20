@@ -16,7 +16,6 @@ interface Props {
 
 const ScrollableChat = ({ messages }: Props) => {
   const { user } = ChatState();
-  console.log(messages, "messages");
 
   return (
     <ScrollableFeed>

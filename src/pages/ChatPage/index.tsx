@@ -12,9 +12,23 @@ export default function ChatPage() {
   const [fetchAgain, setFetchAgain] = useState(false);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        maxHeight: "100vh",
+      }}
+    >
       {user && <SideDrawer />}
-      <Box display="flex" justifyContent="space-between" w="100%" p="10px">
+      <Box
+        flex={1}
+        display="flex"
+        justifyContent="space-between"
+        w="100%"
+        p="10px"
+        overflow="scroll"
+      >
         {user && <MyChats fetchAgain={fetchAgain} />}
         {user && (
           <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />

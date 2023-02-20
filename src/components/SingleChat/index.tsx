@@ -60,7 +60,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }: Props) => {
   useEffect(() => {
     socket = io(SERVER_ADDRESS);
     socket.emit(SET_UP, user);
-    socket.on(CONNECTION, () => {
+    socket.on(CONNECTED, () => {
+      console.log("client connected");
       setSocketConnected(true);
     });
   }, []);
@@ -73,7 +74,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }: Props) => {
 
   useEffect(() => {
     socket.on(MESSAGE_RECEIVED, (newMessageReceived: Message) => {
-      console.log("trigger???", newMessageReceived);
       if (
         !selectedChatCompare ||
         selectedChatCompare._id !== newMessageReceived.chat._id

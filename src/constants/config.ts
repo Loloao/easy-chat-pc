@@ -1,1 +1,1 @@
-export const SERVER_ADDRESS = import.meta.env.BASE_URL;
+export const SERVER_ADDRESS = import.meta.env.VITE_BASE_URL;
